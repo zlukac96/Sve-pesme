@@ -153,8 +153,8 @@ metronom.onmessage = function(e) {
 			textContainer.scroll(0, 0);
 
 /// ovde unos za metronom
-			metronomeTempo = 120;
-			metronomePattern = [2];
+			metronomeTempo = listElements[targetSongIndex].songTempo;
+			metronomePattern = listElements[targetSongIndex].songPattern;
 
 			if(isMetronomWorking === true) metronomStart();
 
@@ -312,7 +312,8 @@ metronom.onmessage = function(e) {
 		for(let i=0; i<listContainer.childNodes.length; i++){
 			
 			
-			if ( listContainer.childNodes[i].children[0].innerText.toLowerCase().includes(inputTextSearch.value.toLowerCase()) ) {
+			if ( listContainer.childNodes[i].children[0].innerText.toLowerCase().includes(inputTextSearch.value.toLowerCase()) ||
+				 listContainer.childNodes[i].children[1].innerText.toLowerCase().includes(inputTextSearch.value.toLowerCase())	) {
 			  //console.log("String sadrži tekst!");
 			  
 			//console.log(listContainer.childNodes[i].children[0].innerText);
